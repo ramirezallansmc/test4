@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<title>Allan Ramirez SMCID6402106</title>
+<!--Hi professor. You may notice that I used the W3 schools stylesheet for my css. I couldnt figure out how to make the five 
+images display properly under the first image and it seemed to fix the problem-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<style>
+.mySlides {display:none}
+.demo {cursor:pointer}
+</style>
+<body>
+
+<div class="w3-content" style="max-width:1200px">
+  <a href="https://duckduckgo.com/">
+  <img class="mySlides" src="img_bridge.jpg" style="width:84%">
+  </a>
+  <a href="https://myspace.com/">
+  <img class="mySlides" src="img_bulb.jpg" style="width:84%">
+  </a>
+  <a href="https://www.instagram.com/?hl=en">
+  <img class="mySlides" src="img_concert.jpg" style="width:84%">
+  </a>
+  <a href="https://www.gotinder.com/">
+  <img class="mySlides" src="img_hospital.jpg" style="width:84%">
+  </a>
+  <a href="http://www.w3schools.com/js/">
+  <img class="mySlides" src="img_losang.jpg" style="width:84%">
+  </a>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col m2">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img_bridge.jpg" style="width:100%" onmouseover="currentDiv(1)">
+    </div>
+    <div class="w3-col m2">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img_bulb.jpg" style="width:100%" onmouseover="currentDiv(2)">
+    </div>
+    <div class="w3-col m2">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img_concert.jpg" style="width:100%" onmouseover="currentDiv(3)">
+    </div>
+    <div class="w3-col m2">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img_hospital.jpg" style="width:100%" onmouseover="currentDiv(4)">
+    </div>
+    <div class="w3-col m2">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img_losang.jpg" style="width:100%" onmouseover="currentDiv(5)">
+    </div>
+  </div>
+</div>
+
+<script>
+var currentImage = 1;
+showDivs(currentImage);
+
+function plusDivs(n) {
+  showDivs(currentImage += n);
+}
+
+function currentDiv(n) {
+  showDivs(currentImage = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {currentImage = 1}
+  if (n < 1) {currentImage = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[currentImage-1].style.display = "block";
+  dots[currentImage-1].className += " w3-opacity-off";
+}
+</script>
+
+</body>
+</html>
